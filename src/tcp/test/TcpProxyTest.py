@@ -5,11 +5,9 @@ Created on 2016年6月23日
 @author: zeroz
 '''
 import unittest
-from tcp.server import TcpProxy
 
 
 class Test(unittest.TestCase):
-
 
 
     def setUp(self):
@@ -24,7 +22,7 @@ class Test(unittest.TestCase):
         s=("This 10 line function is just a sample of pyhton power "
            "for string manipulations.\n"
            "The code is \x07even\x08 quite readable!")
-        TcpProxy.hexdump(s)
+#         TcpProxy.hexdump(s)
 
 
 
