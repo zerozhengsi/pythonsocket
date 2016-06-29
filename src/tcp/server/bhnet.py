@@ -169,7 +169,6 @@ def main():
                 
         print "commond exec args:%s" % args
             
-                
         for o,a in opts:
                 if o in ("-h","--help"):
                         usage()
