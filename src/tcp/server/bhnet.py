@@ -9,6 +9,7 @@ import socket
 import getopt
 import threading
 import subprocess
+from test.ssl_servers import args
 
 listen              = False
 command             = False
@@ -166,7 +167,9 @@ def main():
                 print str(err)
                 usage()
                 
-        print "commond exec args:%s" % args        
+        print "commond exec args:%s" % args
+            
+                
         for o,a in opts:
                 if o in ("-h","--help"):
                         usage()
