@@ -9,7 +9,6 @@ import socket
 import getopt
 import threading
 import subprocess
-from test.ssl_servers import args
 
 listen              = False
 command             = False
