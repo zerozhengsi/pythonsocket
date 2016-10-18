@@ -21,13 +21,17 @@ print "[*] listening on %s%d" % (bind_ip,bind_port)
 
 def handle_client(client_socket):
     request = client_socket.recv(1024)
-    start,length,code = struct.unpack("<ci6s",request)
+    print "[*] received: %s" % request
+    print "[*] received length: %s" % len(request)
+    start,length,code = struct.unpack("<ci6s",request[0:11])
     print "[*] received start: %s" % start
     print "[*] received length: %s" % length
     print "[*] received code: %s" % code
-#     print "[*] received message: %s" % message
-#     print "[*] received end: %s" % end
-#     print "[*] received: %s" % request
+    samp = "%ssc" % length
+    message,end = struct.unpack(samp,request[11:11+length+1])
+    print "[*] received message: %s" % message
+    print "[*] received end: %s" % end
+    
     client_socket.send("ok!")
     client_socket.close()
 
