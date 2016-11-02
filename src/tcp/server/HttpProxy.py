@@ -47,7 +47,7 @@ class Proxy(object):
         self.destnation.connect((ip,port))
         data="%s %s %s\r\n" %(self.headers['method'],self.headers['path'],self.headers['protocol'])
         self.destnation.send(data+self.request)
-        print data+self.request
+        print data+self.request.encode("UTF-8")
 
 
     def renderto(self):
